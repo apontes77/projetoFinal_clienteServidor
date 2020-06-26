@@ -1,0 +1,75 @@
+<?page title="Cadastro e Busca de Disciplinas" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+<zscript><![CDATA[//@IMPORT
+                  import br.com.alexandrepontes.controllers.CtrlTurmas;
+                  ]]></zscript>
+
+	<window title="Cadastro e Busca de Turmas" border="normal"
+		apply="CtrlTurmas">
+		<tabbox>
+			<tabs>
+				<tab id="tabCadastroTurmas" label="Inserir Turmas" />
+				<tab id="tabPesquisaTurmas" label="Pesquisar Turmas" />
+			</tabs>
+			<tabpanels>
+				<tabpanel>
+					<grid>
+						<rows>
+							<row>
+								<label value="Disciplina:" />
+								<hlayout>
+									<combobox id="buscarDisciplinas">
+										<comboitem label="" />
+									</combobox>
+								</hlayout>
+							</row>
+							<row>
+								<label value="Turma" />
+								<textbox id="txtTurma"
+									constraint="no empty" cols="20" />
+							</row>
+						</rows>
+					</grid>
+					<groupbox>
+						<div align="center">
+							<button id="btnIncluirTurma" onClick=""
+								label="Incluir Turma" />
+							<button id="btnlimparCampos" onClick=""
+								label="Limpar Campo" />
+						</div>
+					</groupbox>
+				</tabpanel>
+				<tabpanel>
+					<separator width="200px" />
+					<div align="center">
+						<grid>
+							<rows>
+								<row>
+									<label value="Busca por Turma:" />
+									<textbox id="txtBuscaTurma" width="180%" />
+									<button id="btnBuscaTurma" label="Buscar" onClick="" />
+								</row>
+							</rows>
+						</grid>
+						<separator width="200px" />			
+						<groupbox>
+							<listbox id="listboxTurmas" rows="8">
+								<listhead>
+									<listheader id="listDisciplina"
+										label="Disciplina" align="center" sort="auto" width="50%" />
+									<listheader id="listTurma"
+										label="Turma" align="center" sort="auto" width="50%" />
+								</listhead>
+								<listitem>
+									<listcell label="" />
+									<listcell label="" />
+								</listitem>
+							</listbox>
+						</groupbox>
+					</div>
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+	</window>
+</zk>

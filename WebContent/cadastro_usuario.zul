@@ -1,0 +1,43 @@
+<?page title="Cadastro de Usuário" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<zscript><![CDATA[
+	//@IMPORT
+	import br.com.alexandrepontes.controllers.CtrlUsuario;
+]]></zscript>
+	<window title="Cadastro de Usuário" border="normal"
+		apply="CtrlUsuario">
+
+		<tabbox>
+			<tabs>
+				<tab id="tabCadastroUsuario" label="Inserir Usuário" />
+			</tabs>
+			<tabpanels>
+				<tabpanel>
+					<grid>
+						<rows>
+							<row>
+								<label value="Usuário:" />
+								<textbox id="txtNomeUsuario"
+									width="350px" />
+							</row>
+							<row>
+								<label value="Tipo de Usuário:" />
+								<textbox id="txtTipoUser" width="350px" />
+							</row>
+							<row>
+								<label value="Senha:" />
+								<textbox id="txtSenha" width="350px" type="password"/>
+							</row>
+						</rows>
+					</grid>
+					<groupbox>
+						<div align="center">
+							<button id="btnIncluirUsuario" onClick=""
+								label="Incluir" />
+						</div>
+					</groupbox>
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+	</window>
+</zk>

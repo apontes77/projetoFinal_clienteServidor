@@ -1,0 +1,41 @@
+<?page title="Menu Principal" contentType="text/html;charset=UTF-8"?>
+<zk>
+<zscript><![CDATA[//@IMPORT
+                  import br.com.alexandrepontes.controllers.CtrlMenuPrincipal;
+                  ]]></zscript>
+		<window title="Menu Principal" height="800px" border="normal" width="1430px" 
+		apply="CtrlMenuPrincipal">
+
+		<menubar autodrop="true">
+			<menu label="Cadastro de Usuários">
+				<menupopup>
+					<menuitem id="mItemNovoUsuario" label="Cadastrar Usuário" />
+				</menupopup>
+			</menu>
+			<menu label="Cadastro e Pesquisa de Alunos">
+				<menupopup>
+					<menuitem id="mItemNovoAluno" label="Cadastrar ou Buscar Alunos" />
+				</menupopup>
+			</menu>
+		
+			<menu label="Cadastro e Pesquisa de Disciplinas">
+				<menupopup>
+					<menuitem id="menuDisciplinas" label="Disciplinas"/>
+				</menupopup>
+			</menu>
+			
+			<menu  label="Cadastro e Pesquisa de Turmas" >
+				<menupopup>
+					<menuitem id="menuTurmas" label="Turmas"/>
+				</menupopup>
+			</menu>
+			
+			<menu label="Gerar Relatórios">
+				<menupopup>
+					<menuitem id="mRelSimples" label="Relatório Simples" />
+					<menuitem id="mRelComplexo" label="Relatório Complexo" />
+				</menupopup>
+			</menu>
+		</menubar>
+	</window>
+</zk>

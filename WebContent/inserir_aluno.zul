@@ -1,0 +1,136 @@
+<?page title="CRUD de Alunos e Suas Notas" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<zscript><![CDATA[
+	//@IMPORT
+	import br.com.alexandrepontes.controllers.CtrlInserirAluno;
+]]></zscript>
+	<window title="Lançamento de Notas dos Alunos" border="normal"
+		apply="CtrlInserirAluno">
+		<tabbox>
+			<tabs>
+				<tab id="tabPesquisaAlunos"
+					label="Pesquisar Cadastros de Alunos"
+					disabled="false" />
+				<tab id="tabAtualizarAluno" 
+					label="Atualizar/Cadastrar Alunos" 
+					disabled="false"/>
+			</tabs>
+			<tabpanels>
+				<tabpanel>
+					<div align="center">
+						<groupbox>
+							<grid>
+								<rows>
+									<row>
+										<label
+											value="Selecione o método de busca:" />
+										<hlayout>
+											<combobox
+												id="tipoDePesquisa">
+												<comboitem label="Nome" />
+												<comboitem
+													label="Matrícula" />
+											</combobox>
+										</hlayout>
+									</row>
+								</rows>
+							</grid>
+						</groupbox>
+						<separator width="100px" />
+						<grid>
+							<rows>
+								<row>
+									<label
+										value="Insira Nome ou Matrícula:" />
+									<textbox id="txtBuscaCadastro"
+										width="180%" />
+									<button id="btnBuscaCadastro"
+										label="Buscar" onClick="" />
+								</row>
+							</rows>
+						</grid>
+						<groupbox>
+							<listbox id="listboxAlunos" rows="10">
+								<listhead>
+									<listheader label="ID Aluno"
+										sort="auto" width="25%" align="center" />
+									<listheader label="Matrícula"
+										sort="auto" width="35%" align="center" />
+									<listheader label="Nome" sort="auto"
+										width="50%" align="center" />
+									<listheader label="Disciplina"
+										sort="auto" width="50%" align="center" />
+									<listheader label="Turma"
+										sort="auto" width="50%" align="center" />
+									<listheader label="N1" width="25%"
+										sort="auto" align="center" />
+									<listheader label="N2" width="25%"
+										sort="auto" align="center" />
+								</listhead>
+								<listitem>
+									<listcell label="" />
+									<listcell label="" />
+									<listcell label="" />
+									<listcell label="" />
+									<listcell label="" />
+									<listcell label="" />
+									<listcell label="" />
+								</listitem>
+							</listbox>
+						</groupbox>
+					</div>
+				</tabpanel>
+				<tabpanel>
+					<grid>
+						<rows>
+							<row>
+								<label value="ID Aluno"/>
+								<intbox id="intId" readonly="true" width="80px"/>
+							</row>
+							<row>
+								<label value="Matrícula:" />
+								<textbox id="txtMatricula"
+									width="150px" />
+							</row>
+							<row>
+								<label value="Nome do Aluno:" />
+								<textbox id="txtNomeDeAluno"
+									width="350px" />
+							</row>
+							<row>
+								<label value="Disciplina:" />
+								<textbox id="txtDisciplinaDeAluno"
+									width="350px" />
+							</row>
+							<row>
+								<label value="Turma:" />
+								<textbox id="txtTurmaDeAluno"
+									width="350px" />
+							</row>
+							<row>
+								<label value="Nota de N1:" />
+								<textbox id="decimalN1Inserir"
+									width="100px" />
+							</row>
+							<row>
+								<label value="Nota de N2:" />
+								<textbox id="decimalN2Inserir"
+									width="100px" />
+							</row>
+						</rows>
+					</grid>
+					<groupbox>
+						<div align="center">
+							<button id="btnIncluirAluno" label="Incluir"
+								onClick="" />
+							<button id="btnAlterarAluno" label="Atualizar"
+								onClick="" />
+							<button id="btnLimparAluno" label="Limpar"
+								onClick="" />
+						</div>
+					</groupbox>
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+	</window>
+</zk>

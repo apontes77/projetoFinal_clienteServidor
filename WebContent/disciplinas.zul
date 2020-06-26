@@ -1,0 +1,70 @@
+<?page title="Cadastro e Busca de Disciplinas" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+<zscript><![CDATA[//@IMPORT
+                  import br.com.alexandrepontes.controllers.CtrlDisciplinas;
+                  ]]></zscript>
+	<window title="Cadastro e Busca de Disciplinas" border="normal"
+		apply="CtrlDisciplinas">
+		<tabbox>
+			<tabs>
+				<tab id="tabCadastroDisciplinas"
+					label="Inserir Disciplina" />
+				<tab id="tabPesquisaDisciplinas"
+					label="Pesquisar Disciplina" />
+			</tabs>
+			<tabpanels>
+				<tabpanel>
+					<grid>
+						<rows>
+							<row>
+								<label value="Disciplina:" />
+								<textbox id="txtDisciplina" constraint="no empty"  />
+							</row>
+						</rows>
+					</grid>
+					<groupbox>
+						<div align="center">
+							<button id="btnIncluirDisciplina" onClick=""
+								label="Incluir Disciplina" />
+							<button id="btnLimparCampos" onClick=""
+								label="Limpar Campo" />
+						</div>
+					</groupbox>
+				</tabpanel>
+				<tabpanel>
+				<separator width="200px" />
+					<div align="center">
+						<grid>
+							<rows>
+								<row>
+									<label
+										value="Busca por Disciplina:" />
+									<textbox id="txtBuscaDisciplina"
+										width="180%" />
+									<button id="btnBuscaDisciplina"
+										label="Buscar" onClick="" />
+								</row>
+							</rows>
+						</grid>
+						<separator width="200px" />
+						<groupbox>
+							<listbox id="listboxDisciplina" rows="8">
+								<listhead>
+									<listheader id="listId"
+										label="Id" sort="auto" align="center" width="50%" />
+									<listheader id="listdisciplina"
+										label="Disciplina" sort="auto" align="center" width="50%" />
+								</listhead>
+								<listitem>
+									<listcell label="" />
+									<listcell label="" />
+								</listitem>
+							</listbox>
+						</groupbox>
+					</div>
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+	</window>
+</zk>

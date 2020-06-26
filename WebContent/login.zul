@@ -1,0 +1,36 @@
+<?page title="Login - Sistema de Notas" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<zscript><![CDATA[
+	//@IMPORT
+	import br.com.alexandrepontes.controllers.CtrlLogin;
+]]></zscript>
+	<window title="Login" height="450px" width="900%" border="normal" position="center"
+		sizable="true" hflex="min" apply="CtrlLogin">
+
+		<separator height="100px" width="400px" />
+		<div align="center">
+			<grid id="demoGrid" width="500px">
+				<rows>
+					<row>
+						<label value="Usuário" />
+						<textbox id="txtuser" constraint="no empty"
+							width="100%" />
+					</row>
+					<row>
+						<label value="Senha" />
+						<textbox id="txtkeyword" constraint="no empty"
+							type="password" width="100%" />
+					</row>
+				</rows>
+			</grid>
+		</div>
+		<separator height="50px" width="400px" />
+		<div align="center">
+			<button id="btnlogin" width="25%" label="Entrar no Sistema"
+				onClick="" />
+		</div>
+
+	</window>
+
+
+</zk>

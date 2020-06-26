@@ -1,0 +1,42 @@
+<?page title="Relatório Geral de Notas" style="height:100%" ?>
+<window width="100%" height="100%" >
+<button id="btnOK" label="Clique Aqui para Obter o Relatório Geral" onClick="doReport()"/>
+
+<borderlayout height="100%" >
+	<center border="none" >
+		<iframe id="report" width="85%" height="75%" />	
+	</center>
+</borderlayout>
+<zscript>
+	<![CDATA[
+	         import java.io.*;
+	         import java.sql.*;
+	         import org.zkoss.util.media.AMedia;
+	        
+	         import net.sf.jasperreports.engine.JasperFillManager;
+	         import net.sf.jasperreports.engine.JasperPrint;
+	         import net.sf.jasperreports.engine.JasperCompileManager;
+	         import net.sf.jasperreports.engine.JasperReport;
+	         import net.sf.jasperreports.view.JasperViewer;
+	         import net.sf.jasperreports.engine.JasperRunManager;
+	         import net.sf.jasperreports.engine.util.JRStyledTextParser;
+	         import br.com.alexandrepontes.model.connection.*;
+	   void doReport() {
+		   InputStream is = null;
+		   try{
+			  Conexao conexao = new Conexao();
+				is = new FileInputStream("C:/Users/alepq/eclipse-workspace/final_project/relatorios/Relatorio_Simples.jasper");
+			final byte[] buf = 
+					JasperRunManager.runReportToPdf(is, null, conexao.getConnection());
+			final InputStream mediais = new ByteArrayInputStream(buf);
+			final AMedia amedia = 
+					new AMedia("C:/Users/alepq/JaspersoftWorkspace/MyReports/Relatorio_Simples.pdf","pdf","application/pdf",mediais);
+			report.setContent(amedia);
+		   }
+		   catch(Exception e){
+			   throw new RuntimeException(e);
+		   }
+	   }
+	         
+	         ]]></zscript>
+</window>
